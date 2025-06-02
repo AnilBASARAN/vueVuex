@@ -1,12 +1,15 @@
 <template>
-  <button @click="addOne">Add 1</button>
+  <button @click="addTwo">Add 2</button>
 </template>
 
 <script>
 export default {
   methods: {
-    addOne() {
-      this.$store.state.counter++;
+    addTwo() {
+      this.$store.commit({
+        type: 'increment',
+        value: 2,
+      });
     },
   },
 };
