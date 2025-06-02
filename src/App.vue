@@ -1,7 +1,7 @@
 <template>
   <base-container title="Vuex">
-    <h3>{{ $store.state.counter }}</h3>
-    <button>Add 1</button>
+    <h3>{{ counter }}</h3>
+    <button @click="addOne">Add 1</button>
   </base-container>
 </template>
 
@@ -11,6 +11,16 @@ import BaseContainer from './components/BaseContainer.vue';
 export default {
   components: {
     BaseContainer,
+  },
+  computed: {
+    counter() {
+      return this.$store.state.counter;
+    },
+  },
+  methods: {
+    addOne() {
+      this.$store.state.counter++;
+    },
   },
   data() {},
 };
