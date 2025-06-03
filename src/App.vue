@@ -35,11 +35,11 @@ export default {
   },
   methods: {
     addOne() {
-      this.$store.dispatch('increase', { value: 10 });
+      this.$store.dispatch('numbers/increase', { value: 10 });
     },
     reset() {
       this.$store.commit({
-        type: 'setToZero',
+        type: 'numbers/setToZero',
       });
     },
   },
