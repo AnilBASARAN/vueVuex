@@ -4,6 +4,14 @@ import { createStore } from 'vuex';
 import App from './App.vue';
 
 const store = createStore({
+  actions: {
+    //its just a method
+    increment(context) {
+      setTimeout(function () {
+        context.commit('increment');
+      }, 2000);
+    },
+  },
   state() {
     return {
       counter: 0,
